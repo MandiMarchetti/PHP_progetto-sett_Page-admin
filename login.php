@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action="">
+                                            <form action="" method="POST">
                                                 <div class="form-group">
                                                     <input type="text" class="form-style" placeholder="Username" name="username" />
                                                     <i class="input-icon uil uil-at"></i>

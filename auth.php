@@ -26,10 +26,18 @@ function login($username, $password)
 
     if ($result->num_rows == 1) {
         $user = $result->fetch_assoc();
+        error_log("User found: " . $user['username']);
+
+        // Verificação da senha
         if (password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
+            error_log("Login successful for user: $username");
             return true;
+        } else {
+            error_log("Password verification failed for user: $username");
         }
+    } else {
+        error_log("No user found with username: $username");
     }
     return false;
 }

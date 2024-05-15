@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900");
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #2b2e38;
+  background-color: #ffffff;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://img.freepik.com/vecteurs-premium/motif-ondes-geometriques-japonaises-sans-couture-rose-blanc-seigaihamon_713536-788.jpg");
+  opacity: 0.4; /* Ajuste a opacidade conforme necessário */
+}
