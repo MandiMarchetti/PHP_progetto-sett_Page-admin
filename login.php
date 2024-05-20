@@ -1,41 +1,21 @@
 <?php
-require_once 'auth.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+include_once __DIR__ . '/verifyLogin.php';
 
-    if (login($username, $password)) {
-        header('Location: dashboard.php');
-        exit();
-    } else {
-        $error_message = "Credenziali non valide.";
-    }
-}
+
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
     <title>Login</title>
 </head>
 
 <body>
-    <?php if (isset($error_message)) echo "<p>$error_message</p>"; ?>
-    <!-- <form action="" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="text" id="password" name="password"><br>
-        <input type="submit" value="Login">
-    </form> -->
 
     <div class="section">
         <div class="container">
@@ -55,18 +35,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                                         <div class="section text-center">
                                             <h4 class="mb-4 pb-3">Log In</h4>
-                                            <form action="" method="POST">
+
+                                            <form method="POST" action="">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-style" placeholder="Username" name="username" />
+                                                    <input type="text" class="form-style" placeholder="Username" name="username" id="username" aria-describedby="username" />
                                                     <i class="input-icon uil uil-at"></i>
                                                 </div>
                                                 <div class="form-group mt-2">
-                                                    <input type="password" class="form-style" placeholder="Password" name="password" />
+                                                    <input type="password" class="form-style" placeholder="Password" name="password" id="password" />
                                                     <i class="input-icon uil uil-lock-alt"></i>
                                                 </div>
-                                                <!-- <a href="/" class="btn mt-4">
-                                                Login
-                                            </a> -->
                                                 <button class="btn mt-4" type="submit" name="register-btn" value="Login">
                                                     Login
                                                 </button>

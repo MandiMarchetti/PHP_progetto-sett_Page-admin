@@ -1,14 +1,11 @@
 <?php
-require_once 'auth.php';
 
-if (!is_logged_in()) {
-    header('Location: login.php');
-    exit();
-}
+include __DIR__ . '/class/home.php';
+include __DIR__ . '/card.php';
+include __DIR__ . '/verifyLogin.php';
 
-if (!is_admin()) {
-    header('Location: access_denied.php');
-    exit();
+if ($_SESSION['username']) {
+    echo "You are in!!!";
 }
 ?>
 
@@ -19,16 +16,42 @@ if (!is_admin()) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
     <title>DASHBOARD </title>
 </head>
 
 <body>
     <h2>Dashboard</h2>
-    <p>Benvenuto, <?php echo $_SESSION['username']; ?></p>
-    <p><a href="logout.php">Logout</a></p>
-    <!-- Aggiungi qui il codice per visualizzare e gestire i dati sensibili -->
+    <div>
+        <a class='fw-bold' href="inserisci.php">Insert a new article</a>
+    </div>
+
+    <hr>
+
+    <h1 class="mt-5">Welcome you!!!</h1>
+
+    <div class="row gy-3">
+
+        <?php
+
+        $case = [];
+
+        foreach ($articoli as $e) {
+            $case[] = new Casa($e['id'], $e['name'], $e['price'], $e['image']);
+        }
+
+        foreach ($case as $e) {
+            $e->render();
+        }
+
+
+
+
+
+        ?>
+    </div>
+
 </body>
 
 </html>
