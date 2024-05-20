@@ -162,8 +162,8 @@ h6 span {
 .input-icon {
   color: #ffeba7;
   position: absolute;
-  top: 0;
-  left: 18px;
+  top: 10px;
+  left: 10px;
   height: 48px;
   font-size: 24px;
   line-height: 48px;
