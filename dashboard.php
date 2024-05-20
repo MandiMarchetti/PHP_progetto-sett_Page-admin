@@ -2,8 +2,9 @@
 
 include __DIR__ . '/navbar.php';
 include __DIR__ . '/class/home.php';
-include __DIR__ . '/card.php';
 include __DIR__ . '/verifyLogin.php';
+include __DIR__ . '/card.php';
+
 
 // if ($_SESSION['username']) {
 //     echo "You are in!!!";
@@ -21,25 +22,25 @@ include __DIR__ . '/verifyLogin.php';
 
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div class="row gy-2">
-                <?php
-                $case = [];
-                foreach ($article as $e) {
-                    $case[] = new Article($e['id'], $e['title'], $e['text'], $e['image']);
-                }
-                foreach ($case as $e) {
-                    $e->render();
-                }
-                ?>
-            </div>
 
-        </div>
+        <?php
+        $case = [];
+        foreach ($article as $e) {
+            $case[] = new Article($e['id'], $e['title'], $e['text'], $e['image']);
+            // var_dump($case);
+        }
+        foreach ($case as $e) {
+            $e->render();
+        }
+        ?>
+
+
+
     </div>
 </div>
 
 
-
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
