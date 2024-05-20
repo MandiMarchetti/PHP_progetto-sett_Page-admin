@@ -2,6 +2,7 @@
 
 include __DIR__ . '/auth.php';
 include __DIR__ . '/navbar.php';
+include __DIR__ . '/doc.php';
 
 
 

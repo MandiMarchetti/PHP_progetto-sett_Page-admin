@@ -4,6 +4,7 @@ include __DIR__ . '/navbar.php';
 include __DIR__ . '/class/home.php';
 include __DIR__ . '/verifyLogin.php';
 include __DIR__ . '/card.php';
+include __DIR__ . '/doc.php';
 
 
 // if ($_SESSION['username']) {
@@ -15,7 +16,7 @@ include __DIR__ . '/card.php';
 <div class="container-fluid">
     <div class="row">
         <div class="col d-flex justify-content-center">
-            <h1 class="mt-2 mb-5">Welcome to your Dashboard</h1>
+            <h1 class="mt-4 mb-5">Welcome to your Dashboard</h1>
         </div>
     </div>
 </div>
@@ -39,8 +40,8 @@ include __DIR__ . '/card.php';
     </div>
 </div>
 
+<?php
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-</body>
+include __DIR__ . '/footer.php';
 
-</html>
+?>
